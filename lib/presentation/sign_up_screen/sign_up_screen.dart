@@ -1,9 +1,10 @@
-import 'bloc/sign_up_bloc.dart';
-import 'models/sign_up_model.dart';
 import 'package:flutter/material.dart';
 import 'package:triko_blog/core/app_export.dart';
-import 'package:triko_blog/domain/googleauth/google_auth_helper.dart';
 import 'package:triko_blog/domain/facebookauth/facebook_auth_helper.dart';
+import 'package:triko_blog/domain/googleauth/google_auth_helper.dart';
+
+import 'bloc/sign_up_bloc.dart';
+import 'models/sign_up_model.dart';
 
 class SignUpScreen extends StatelessWidget {
   static Widget builder(BuildContext context) {
@@ -134,13 +135,20 @@ class SignUpScreen extends StatelessWidget {
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.left,
                                       style: AppStyle.txtPoppinsRegular14),
-                                  Padding(
-                                      padding: getPadding(left: 6),
-                                      child: Text("lbl_sign_in".tr,
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.left,
-                                          style: AppStyle
-                                              .txtPoppinsRegular14LightblueA200))
+                                  GestureDetector(
+                                    onTap: () {
+                                      NavigatorService.pushNamed(
+                                        AppRoutes.signInScreen,
+                                      );
+                                    },
+                                    child: Padding(
+                                        padding: getPadding(left: 6),
+                                        child: Text("lbl_sign_in".tr,
+                                            overflow: TextOverflow.ellipsis,
+                                            textAlign: TextAlign.left,
+                                            style: AppStyle
+                                                .txtPoppinsRegular14LightblueA200)),
+                                  )
                                 ]))),
                         Spacer(),
                         Container(

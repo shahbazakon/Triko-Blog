@@ -16,7 +16,7 @@ dependencies:
   equatable: ^2.0.0
   flutter_login_facebook: ^1.6.2
   google_sign_in: ^5.0.7
-  intl: ^0.17.0
+  intl: 
   dio: ^5.0.3
 dev_dependencies: 
   flutter_test: 
