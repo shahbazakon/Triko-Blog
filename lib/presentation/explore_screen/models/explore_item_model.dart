@@ -1,0 +1,3 @@
+class ExploreItemModel {
+  String? id = "";
+}
